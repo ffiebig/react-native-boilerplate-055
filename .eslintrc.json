@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": ["react-native-globals"],
+  "env": {
+    "react-native-globals/all": true,
+    "jest": true
+  },
+  "rules": {
+    "global-require": "off",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "import/first": "off",
+    "react/prop-types": "warn",
+    "react/require-default-props": "warn",
+    "import/prefer-default-export": "off"
+  }
+}
