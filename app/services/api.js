@@ -1,9 +1,8 @@
 import store from '../config/store';
+import { API_CONFIG } from '../config/configurations';
 
-const urlBase = 'http://replace.this';
-const version = 'v1';
-const url = () => urlBase + version;
-const globalTimeout = 15 * 1000;
+const url = () => (API_CONFIG.url + API_CONFIG.version);
+const globalTimeout = API_CONFIG.timeout;
 const timeoutMessage =
   'Está tardando demasiado, verifica tu conexión a internet e intenta nuevamente';
 
