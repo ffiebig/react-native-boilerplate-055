@@ -112,6 +112,7 @@ function* recoverPasswordSuccessCallback(result) {
   }
 }
 function* recoverPasswordFailureCallback() {
+  // Error handled by runDefaultSaga
   yield null;
 }
 function* recoverPassword(action) {
