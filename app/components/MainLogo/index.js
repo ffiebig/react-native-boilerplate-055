@@ -1,17 +1,3 @@
-import React from 'react';
-import { Image } from 'react-native';
-import styles from './styles';
-
-const MainLogo = ({ extraStyle }) => (
-  <Image
-    resizeMode="contain"
-    style={[styles.logo, extraStyle]}
-    source={require('./logo.png')}
-  />
-);
-
-MainLogo.defaultProps = {
-  extraStyle: {},
-};
+import MainLogo from './MainLogo';
 
 export default MainLogo;

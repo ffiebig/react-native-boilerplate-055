@@ -8,6 +8,9 @@ import DropdownAlert from 'react-native-dropdownalert';
 import { connect } from 'react-redux';
 
 class AlertProvider extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+  };
   static get childContextTypes() {
     return {
       alertWithType: PropTypes.func,

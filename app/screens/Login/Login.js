@@ -27,11 +27,27 @@ class LoginScreen extends React.Component {
       signIn: PropTypes.bool,
       signOut: PropTypes.bool,
     }),
+    notice: PropTypes.shape({
+      kind: PropTypes.string,
+      title: PropTypes.string,
+      message: PropTypes.string,
+    }),
+    signedIn: PropTypes.bool,
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }).isRequired,
+    dispatch: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     alertWithType: null,
     ongoingRequest: { signIn: false, signOut: false },
+    notice: {
+      kind: '',
+      title: '',
+      message: '',
+    },
+    signedIn: false,
   };
 
   constructor(props) {
@@ -66,7 +82,7 @@ class LoginScreen extends React.Component {
   }
 
   signInAsync = async (email, password) => {
-    this.props.dispatch(requestSignIn({ legal: email, password }));
+    this.props.dispatch(requestSignIn({ email, password }));
   };
 
   render() {

@@ -14,6 +14,13 @@ class ProfileScreen extends React.Component {
       kind: PropTypes.string,
       message: PropTypes.string,
     }),
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }).isRequired,
+    dispatch: PropTypes.func.isRequired,
+    user: PropTypes.shape({
+      email: PropTypes.string,
+    }),
   };
 
   static defaultProps = {
@@ -22,6 +29,9 @@ class ProfileScreen extends React.Component {
       title: '',
       kind: '',
       message: '',
+    },
+    user: {
+      email: '',
     },
   };
 

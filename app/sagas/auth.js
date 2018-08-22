@@ -210,7 +210,8 @@ function* recoverPassword(action) {
       });
     }
   } catch (error) {
-    console.log(error);
+    // TODO Handle error:q
+    // console.log(error);
   }
 }
 export default function* authSagas() {

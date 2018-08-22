@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ActivityIndicator, AsyncStorage, View } from 'react-native';
 import { restoreAuthInfo, validateToken } from '../../actions/auth';
 import { MainLogo } from '../../components';
@@ -6,8 +7,11 @@ import styles from './styles';
 import { connect } from 'react-redux';
 
 class SplashScreen extends React.Component {
-  static defaultProps = {
-    navigateTo: null,
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }).isRequired,
+    dispatch: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
